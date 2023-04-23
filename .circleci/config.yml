@@ -118,6 +118,7 @@ jobs:
           command: |
             exit 0
             cd backend
+            npm install
             npm run test
             
   scan-frontend:
@@ -353,10 +354,10 @@ workflows:
     jobs:
       - build-frontend
       - build-backend
-      # - test-frontend:
-      #     requires: [build-frontend]
-      # - test-backend:
-      #     requires: [build-backend]
+      - test-frontend:
+          requires: [build-frontend]
+      - test-backend:
+          requires: [build-backend]
       # - scan-backend:
       #     requires: [build-backend]
       # - scan-frontend:
