@@ -133,7 +133,10 @@ jobs:
           name: Scan front-end
           command: |
             exit 0
-            npm audit
+            cd frontend
+            npm install
+            npm audit --audit-level=critical
+           # npm audit
 
   scan-backend:
     docker:
@@ -146,7 +149,9 @@ jobs:
           name: Scan Back-end
           command: |
             exit 0
-            npm audit
+            npm install
+            npm audit --audit-level=critical
+           # npm audit
 
   deploy-infrastructure:
     docker:
@@ -359,10 +364,10 @@ workflows:
             requires: [build-frontend]
         - test-backend:
             requires: [build-backend]
-      # - scan-backend:
-      #     requires: [build-backend]
-      # - scan-frontend:
-      #     requires: [build-frontend]
+        - scan-backend:
+            requires: [build-backend]
+        - scan-frontend:
+            requires: [build-frontend]
       # - deploy-infrastructure:
       #     # requires: [test-frontend, test-backend, scan-frontend, scan-backend]
       #     filters:
