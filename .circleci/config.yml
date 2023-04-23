@@ -103,7 +103,7 @@ jobs:
             cd frontend
             npm install
             npm install oauth-sign
-            # npm run build
+            npm run build
             npm run test
                 
   test-backend:
