@@ -194,7 +194,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["0d:a0:d2:30:e7:40:31:70:0e:69:45:04:ad:36:0b:8c"]
+          fingerprints: ["3c:23:ae:09:73:1e:37:c2:8b:44:55:a8:96:95:3f:91"]
       # - run:
       #     name: "Install Dependencies"
       #     command: |
@@ -261,7 +261,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["0d:a0:d2:30:e7:40:31:70:0e:69:45:04:ad:36:0b:8c"]
+          fingerprints: ["3c:23:ae:09:73:1e:37:c2:8b:44:55:a8:96:95:3f:91"]
       - run:
           name: Deploy backend
           command: |
