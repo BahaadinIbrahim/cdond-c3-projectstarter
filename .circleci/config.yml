@@ -481,14 +481,14 @@ jobs:
   #               aws cloudformation delete-stack --stack-name "udapeople-backend-${OldWorkflowID}"
   #               aws cloudformation delete-stack --stack-name "udapeople-frontend-${OldWorkflowID}"
   #             fi
-  notify_on_success:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - slack/notify:
-          event: pass
-          channel: cicd-udacity-project
-          template: success_tagged_deploy_1
+  #notify_on_success:
+  #  docker:
+  #    - image: cimg/base:stable
+  #  steps:
+  #    - slack/notify:
+  #        event: pass
+  #        channel: cicd-udacity-project
+  #        template: success_tagged_deploy_1
 
 workflows:  # create workflows
   default:
